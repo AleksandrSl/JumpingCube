@@ -76,7 +76,7 @@ Rigidbody:
   m_AngularDrag: .0500000007
   m_UseGravity: 1
   m_IsKinematic: 0
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_Constraints: 0
   m_CollisionDetection: 0
 --- !u!65 &6559230
@@ -102,7 +102,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1792989a5a33779428d2dbe9a9430605, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: .75
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -184,6 +184,10 @@ Prefab:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
       propertyPath: particlesPrefab
       value: 
       objectReference: {fileID: 170488, guid: 2265f031c72ee564ea1e5f751612080d, type: 2}
@@ -206,6 +210,66 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_PlayOnAwake
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[0].value
+      value: 1.01249993
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[0].inSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[0].outSlope
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[0].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[1].inSlope
+      value: 1.1973083
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[1].outSlope
+      value: 1.1973083
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[1].tangentMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[1].value
+      value: .525480032
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[0].time
+      value: -4.19095159e-09
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[1].time
+      value: .311395049
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[2].value
+      value: .987499952
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[2].time
+      value: .987500012
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Volume
+      value: .75
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Interpolate
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

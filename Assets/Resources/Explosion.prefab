@@ -112,6 +112,7 @@ GameObject:
   - 4: {fileID: 421684}
   - 198: {fileID: 19879832}
   - 199: {fileID: 19921322}
+  - 114: {fileID: 11425976}
   m_Layer: 0
   m_Name: Explosion
   m_TagString: Untagged
@@ -209,6 +210,47 @@ Transform:
   - {fileID: 448204}
   m_Father: {fileID: 421684}
   m_RootOrder: 4
+--- !u!114 &11425976
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 170488}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7089d6f65c538e4eb705c5ae54cecf6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeScaleCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: .00838541612
+      value: .924966574
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: .214576855
+      value: .291320384
+      inSlope: .672061265
+      outSlope: .672061265
+      tangentMode: 0
+    - time: .301285416
+      value: .512356102
+      inSlope: 1.46175981
+      outSlope: 1.46175981
+      tangentMode: 0
+    - time: .436130732
+      value: .85552752
+      inSlope: 2.26910543
+      outSlope: 2.26910543
+      tangentMode: 0
+    - time: 1
+      value: .9988873
+      inSlope: .402439475
+      outSlope: .402439475
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
 --- !u!198 &19811334
 ParticleSystem:
   m_ObjectHideFlags: 1
@@ -4207,7 +4249,7 @@ ParticleSystem:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 170488}
-  lengthInSec: 5
+  lengthInSec: 4
   startDelay: 0
   speed: 1
   randomSeed: 0
@@ -4239,7 +4281,7 @@ ParticleSystem:
           tangentMode: 0
         m_PreInfinity: 2
         m_PostInfinity: 2
-      minMaxState: 3
+      minMaxState: 0
     startSpeed:
       scalar: 0
       maxCurve:
@@ -7403,7 +7445,91 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[1].time
+      value: .214576855
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[1].value
+      value: .291320384
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[1].inSlope
+      value: .672061265
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[1].outSlope
+      value: .672061265
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[2].time
+      value: .301285416
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[2].value
+      value: .512356102
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[2].inSlope
+      value: 1.46175981
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[2].outSlope
+      value: 1.46175981
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[0].value
+      value: .924966574
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[0].time
+      value: .00838541612
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[3].time
+      value: .436130732
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[3].value
+      value: .85552752
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[3].inSlope
+      value: 2.26910543
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[3].outSlope
+      value: 2.26910543
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[4].value
+      value: .9988873
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[4].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[4].inSlope
+      value: .402439475
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: timeScaleCurve.m_Curve.Array.data[4].outSlope
+      value: .402439475
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: lengthInSec
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: InitialModule.startLifetime.minMaxState
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 170488}

@@ -20,7 +20,7 @@ public class Player : MonoBehaviour
     private Ray ray;
     private bool _crashed;
     private bool _isJumped;
-    private GameObject particle;
+    private GameObject _explosion;
 
     // Use this for initialization
 
@@ -29,6 +29,19 @@ public class Player : MonoBehaviour
 
         source = GetComponent<AudioSource>();
     }
+
+	IEnumerator WaitForNewTarget(float delay) {
+		print(Time.time);
+		yield return new WaitForSeconds (delay);
+		gameObject.tag = "Dead";
+
+
+
+		Destroy (rb);
+		//print(Time.time);
+	}
+
+
     void Start()
     {
         
@@ -53,7 +66,10 @@ public class Player : MonoBehaviour
                 //{
                     MainLogic._score = Mathf.Max(Vector3.Angle(-transform.up, Vector3.ProjectOnPlane(-transform.up, norm)), MainLogic._score);
                     _crashed = true;
+					Time.timeScale = 1.0f; 
                     gameObject.tag = "Dead";
+					Destroy(rb);
+
                 //}
             }
 
@@ -61,20 +77,23 @@ public class Player : MonoBehaviour
             {
 
                 Vector3 contactPoint = collision.contacts[0].point;
-                particle = Instantiate(explosion, contactPoint, Quaternion.identity) as GameObject;
+                _explosion = Instantiate(explosion, contactPoint, Quaternion.identity) as GameObject;
+				ParticleSystem _explosionParticleSystem = _explosion.GetComponent<ParticleSystem>();
+				_explosion.tag = "Explosion";
                 source.PlayOneShot(explosionSound, 0.5f);
                 MainLogic._score *= 2;
                 print("Your score:" + MainLogic._score);
                 _crashed = true;
-                gameObject.tag = "Dead";
-                DestroyObject(particle, 5);
+
+				rb.constraints = RigidbodyConstraints.FreezeAll;
+				rb.velocity = Vector3.zero;//Time.timeScale = 1.0f; 
+				StartCoroutine(WaitForNewTarget(_explosionParticleSystem.duration));
+                
+				DestroyObject(_explosion, _explosionParticleSystem.duration);
 
             }
 
-            if (_crashed)
-            {
-                Destroy(rb);
-            }
+            
         }
     }
    
@@ -107,11 +126,11 @@ public class Player : MonoBehaviour
 
 
 
-            if (rb.position.y <= 3)
+			if ((rb.position.y <= 3)&& (!_crashed))
             {
                 Time.timeScale = 0.2f;
             }
-            else { Time.timeScale = 1.0f; }
+            ///else { Time.timeScale = 1.0f; }
 
         }
     }

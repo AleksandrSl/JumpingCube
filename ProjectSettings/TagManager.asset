@@ -7,6 +7,7 @@ TagManager:
   - Dead
   - Alive
   - StaticObject
+  - Explosion
   - New Tag
   layers:
   - Default
